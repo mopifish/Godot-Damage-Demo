@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://dui38q8talv7s"]
+
+[ext_resource type="Texture2D" uid="uid://djg3x54fwbpgf" path="res://Sprites/Weapons/Bow.png" id="1_wpov7"]
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="2_cjar1"]
+
+[resource]
+script = ExtResource("2_cjar1")
+name = "WoodenBow"
+description = "A simple wooden Bow"
+damage = 5
+texture = ExtResource("1_wpov7")

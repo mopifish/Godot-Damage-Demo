@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Projectile" load_steps=4 format=3 uid="uid://nqrxlixhduxn"]
+
+[ext_resource type="Script" path="res://Scripts/ProjectileResource.gd" id="1_snj5l"]
+[ext_resource type="Texture2D" uid="uid://8qylwv4vo4n" path="res://Sprites/Projectiles/GoldArrow.png" id="2_k6ay0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58nkw"]
+size = Vector2(24, 2)
+
+[resource]
+script = ExtResource("1_snj5l")
+speed = 500
+collision_shape = SubResource("RectangleShape2D_58nkw")
+name = "Gold Arrow"
+description = "A light and swift golden arrow"
+damage = 5
+texture = ExtResource("2_k6ay0")

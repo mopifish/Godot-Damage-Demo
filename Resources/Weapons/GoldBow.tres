@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://dafhemojtm4fo"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="1_qtsq8"]
+[ext_resource type="Texture2D" uid="uid://dn7eusfjmwn2k" path="res://Sprites/Weapons/GoldBow.png" id="2_neh7f"]
+
+[resource]
+script = ExtResource("1_qtsq8")
+name = "Golden Bow"
+description = "A beautiful golden bow"
+damage = 20
+texture = ExtResource("2_neh7f")

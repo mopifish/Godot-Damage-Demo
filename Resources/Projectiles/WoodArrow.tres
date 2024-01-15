@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Projectile" load_steps=4 format=3 uid="uid://cqf4juluc50vu"]
+
+[ext_resource type="Script" path="res://Scripts/ProjectileResource.gd" id="1_ajit0"]
+[ext_resource type="Texture2D" uid="uid://xonulcmw7lom" path="res://Sprites/Projectiles/arrow.png" id="2_f2smq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjiin"]
+size = Vector2(24, 6)
+
+[resource]
+script = ExtResource("1_ajit0")
+speed = 300
+collision_shape = SubResource("RectangleShape2D_jjiin")
+name = "Wood Arrow"
+description = "A red-fletched wooden arrow"
+damage = 3
+texture = ExtResource("2_f2smq")

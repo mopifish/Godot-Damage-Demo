@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://dq7pjwtnghpgm"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_bwwac"]
+[ext_resource type="PackedScene" uid="uid://db8tqi2k4dwdt" path="res://weapon.tscn" id="1_ukdn3"]
+[ext_resource type="Resource" uid="uid://dui38q8talv7s" path="res://Resources/Weapons/WoodBow.tres" id="2_ly4vy"]
+[ext_resource type="Resource" uid="uid://cqf4juluc50vu" path="res://Resources/Projectiles/WoodArrow.tres" id="3_y3xaa"]
+[ext_resource type="PackedScene" uid="uid://bafa3adua60su" path="res://Target.tscn" id="5_rlybx"]
+[ext_resource type="Texture2D" uid="uid://bx8n3vvsyrtd" path="res://Sprites/Icon/WoodBowIcon.png" id="6_xedk2"]
+[ext_resource type="Texture2D" uid="uid://qcwfhvkn3udj" path="res://Sprites/Icon/IronBowIcon.png" id="7_c4ckf"]
+[ext_resource type="Texture2D" uid="uid://bi270rpjadv0u" path="res://Sprites/Icon/GoldBowIcon.png" id="8_jn1f3"]
+[ext_resource type="Texture2D" uid="uid://bsjj5qicikoac" path="res://Sprites/Icon/WoodArrowIcon.png" id="9_1qney"]
+[ext_resource type="Texture2D" uid="uid://dxgtwrg3tuea6" path="res://Sprites/Icon/IronArrowIcon.png" id="10_pq2tw"]
+[ext_resource type="Texture2D" uid="uid://uwddye5ic8be" path="res://Sprites/Icon/GoldArrowIcon.png" id="11_372a7"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bwwac")
+
+[node name="Weapon" parent="." instance=ExtResource("1_ukdn3")]
+position = Vector2(33, 107)
+weapon = ExtResource("2_ly4vy")
+projectile = ExtResource("3_y3xaa")
+
+[node name="Enemy" parent="." instance=ExtResource("5_rlybx")]
+position = Vector2(264, 106)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 58.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 29.0
+offset_bottom = 18.0
+text = "Choose a Bow"
+
+[node name="BowSelector" type="OptionButton" parent="UI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 22.0
+offset_right = 128.0
+offset_bottom = 37.0
+item_count = 3
+selected = 0
+popup/item_0/text = "Wooden Bow"
+popup/item_0/icon = ExtResource("6_xedk2")
+popup/item_0/id = 0
+popup/item_1/text = "Iron Bow"
+popup/item_1/icon = ExtResource("7_c4ckf")
+popup/item_1/id = 1
+popup/item_2/text = "Golden Bow"
+popup/item_2/icon = ExtResource("8_jn1f3")
+popup/item_2/id = 2
+
+[node name="Label2" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 18.0
+text = "Choose an Arrow"
+
+[node name="ArrowSelector" type="OptionButton" parent="UI"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 22.0
+offset_right = 259.0
+offset_bottom = 37.0
+item_count = 3
+selected = 0
+popup/item_0/text = "Wooden Arrow"
+popup/item_0/icon = ExtResource("9_1qney")
+popup/item_0/id = 0
+popup/item_1/text = "Iron Arrow"
+popup/item_1/icon = ExtResource("10_pq2tw")
+popup/item_1/id = 1
+popup/item_2/text = "Golden Arrow"
+popup/item_2/icon = ExtResource("11_372a7")
+popup/item_2/id = 2
+
+[node name="Label3" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 187.0
+offset_right = 120.0
+offset_bottom = 195.0
+text = "Right Click to fire!"
+
+[connection signal="item_selected" from="UI/BowSelector" to="." method="_on_bow_selector_item_selected"]
+[connection signal="item_selected" from="UI/ArrowSelector" to="." method="_on_arrow_selector_item_selected"]

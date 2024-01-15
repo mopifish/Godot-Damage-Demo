@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://cbdcfxjktq6d"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="1_x225o"]
+[ext_resource type="Texture2D" uid="uid://baclwjmmqvmll" path="res://Sprites/Weapons/IronBow.png" id="2_tatqa"]
+
+[resource]
+script = ExtResource("1_x225o")
+name = "Iron Bow"
+description = "A sturdy bow made from wrought-iron"
+damage = 10
+texture = ExtResource("2_tatqa")

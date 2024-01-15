@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Projectile" load_steps=4 format=3 uid="uid://ficam06b45p2"]
+
+[ext_resource type="Script" path="res://Scripts/ProjectileResource.gd" id="1_xslf5"]
+[ext_resource type="Texture2D" uid="uid://bjqsrr46ch721" path="res://Sprites/Projectiles/IronArrow.png" id="2_ck3r1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxgy6"]
+size = Vector2(28, 10)
+
+[resource]
+script = ExtResource("1_xslf5")
+speed = 100
+collision_shape = SubResource("RectangleShape2D_qxgy6")
+name = "Iron Arrow"
+description = "A large and bulky iron arrow"
+damage = 7
+texture = ExtResource("2_ck3r1")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bafa3adua60su"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_aaifu"]
+[ext_resource type="Texture2D" uid="uid://b5ka60qtmtqxx" path="res://Sprites/Target.png" id="2_554cr"]
+[ext_resource type="Script" path="res://Scripts/DamageLabel.gd" id="3_813v4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mnkae"]
+radius = 16.0312
+
+[node name="Target" type="Node2D"]
+script = ExtResource("1_aaifu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_554cr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mnkae")
+debug_color = Color(0.996078, 0, 0.215686, 0.419608)
+
+[node name="DamageLabel" type="Label" parent="."]
+offset_left = -34.0
+offset_top = 19.0
+offset_right = 34.0
+offset_bottom = 45.0
+script = ExtResource("3_813v4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
